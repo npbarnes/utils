@@ -11,7 +11,7 @@ def index(a, x, reverse=False):
 
     if i != len(a) and a[sorter[i]] == x:
         return sorter[i]
-    raise ValueError
+    raise ValueError("Couldn't find x in a")
 
 def find_lt(a, x, reverse=False):
     'Find largest (rightmost normally, leftmost when reversed) value less than x'
@@ -23,7 +23,7 @@ def find_lt(a, x, reverse=False):
 
     if i:
         return sorter[i-1], a[sorter[i-1]]
-    raise ValueError
+    raise ValueError("No value in a less than x")
 
 def find_le(a, x, reverse=False):
     'Find largest (rightmost normally, leftmost when reversed) value less than or equal to x'
@@ -35,7 +35,7 @@ def find_le(a, x, reverse=False):
 
     if i:
         return sorter[i-1], a[sorter[i-1]]
-    raise ValueError
+    raise ValueError("No value in a less than or equal to {}".format(x))
 
 def find_gt(a, x, reverse=False):
     'Find least (leftmost normally, rightmost when reversed) value greater than x'
@@ -47,7 +47,7 @@ def find_gt(a, x, reverse=False):
 
     if i != len(a):
         return sorter[i], a[sorter[i]]
-    raise ValueError
+    raise ValueError("No value in a greater than x")
 
 def find_ge(a, x, reverse=False):
     'Find least (leftmost normally, rightmost when reversed) item greater than or equal to x'
@@ -59,4 +59,4 @@ def find_ge(a, x, reverse=False):
 
     if i != len(a):
         return sorter[i], a[sorter[i]]
-    raise ValueError
+    raise ValueError("No value in a greater than or equal to x")
